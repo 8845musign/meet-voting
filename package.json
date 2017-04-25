@@ -1,0 +1,25 @@
+{
+  "name": "meet-voting",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "lovefield": "^2.1.12",
+    "next": "^2.1.1",
+    "next-redux-wrapper": "^1.1.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1"
+  },
+  "author": "@8845musign",
+  "license": "ISC"
+}
