@@ -12,7 +12,7 @@ const Page = () => (
 
     <div>
     <label for="minimumCharge">Minimum Charge</label>
-    <input type="text" id=",inimumCharge" />
+    <input type="text" id="minimumCharge" />
     </div>
 
     <div>
