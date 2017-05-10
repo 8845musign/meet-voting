@@ -41,3 +41,6 @@ jspm_packages
 
 # editor
 .vscode
+
+# mac
+.DS_Store
