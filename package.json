@@ -2,12 +2,13 @@
   "name": "meet-voting",
   "version": "0.0.1",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "bootstrap": "4",
+    "express": "^4.15.2",
     "immutable": "^3.8.1",
     "next": "^2.1.1",
     "next-redux-wrapper": "^1.1.1",
