@@ -1,13 +1,21 @@
 const express = require('express')
 
-module.exports = () => {
+module.exports = db => {
   const router = express.Router()
 
-  router.get('/', (req, res) => {
-    return res.json({
-      hoge: 'hoge'
-    })
-  })
+  const wrapAsync = handler => (req, res) => handler(req)
+    .then(result => res.json(result))
+    .catch(error => res.status(500).json({ error: error.message }))
+
+  router.post('/event/', wrapAsync(async function (req) {
+    await db.collection('Event')
+      .insertOne({
+        title: 'テスト',
+        date: 'hoge',
+        minimumCharge: 0,
+        description: 'aaaa'
+      })
+  }))
 
   return router
 }
