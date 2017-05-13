@@ -9,6 +9,7 @@
   "dependencies": {
     "bootstrap": "4",
     "co": "^4.6.0",
+    "config": "^1.26.1",
     "express": "^4.15.2",
     "immutable": "^3.8.1",
     "mongodb": "^2.2.26",
