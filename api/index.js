@@ -8,6 +8,8 @@ module.exports = db => {
     .catch(error => res.status(500).json({ error: error.message }))
 
   router.post('/event/', wrapAsync(async function (req) {
+    console.log(req.body)
+
     await db.collection('Event')
       .insertOne({
         title: 'テスト',

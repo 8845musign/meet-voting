@@ -1,10 +1,8 @@
 import { createStore, applyMiddleware } from 'redux'
-import thunkMiddleware from 'redux-thunk'
 import { combineReducers } from 'redux-immutable'
 import { Map } from 'immutable'
 
-
-import { reducer } from '../modules/Admin/Post'
+import { reducer, EventSaveMiddleawre } from '../modules/Admin/Post'
 import EventModel from '../../models/Event'
 
 const event = new EventModel()
@@ -17,5 +15,5 @@ const rootReducer = combineReducers({
 })
 
 export const initStore = () => {
-  return createStore(rootReducer, initialState, applyMiddleware(thunkMiddleware))
+  return createStore(rootReducer, initialState, applyMiddleware(EventSaveMiddleawre))
 }

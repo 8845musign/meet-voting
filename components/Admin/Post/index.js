@@ -16,9 +16,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(({ event, update }) => {
+export default connect(mapStateToProps, mapDispatchToProps)(({ event, update, save }) => {
   return (
-    <form>
+    <form onSubmit={(e) => { e.preventDefault(); save({title: event.get('title')}) }}>
       <div>
         <label htmlFor='title'>Event Title</label>
         <input type='text' id='title' value={event.get('title')} onChange={(e) => { update({ title: e.target.value }) }} />
@@ -38,6 +38,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ event, update }) 
         <label htmlFor='description'>Description</label>
         <textarea id='description' value={event.get('description')} onChange={(e) => { update({ description: e.target.value }) }} />
       </div>
+
+      <button type='submit'>Save</button>
     </form>
   )
 })
