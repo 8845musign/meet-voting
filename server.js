@@ -1,4 +1,5 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const next = require('next')
 const co = require('co')
 const config = require('config')
@@ -21,6 +22,8 @@ co(function * () {
   console.log(`> Connect to ${MONGO_URL}`)
 
   const server = express()
+
+  server.use(bodyParser.json())
 
   server.use('/api', api(db))
 
