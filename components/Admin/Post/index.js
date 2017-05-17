@@ -26,6 +26,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ event, update, sa
           id='title'
           value={event.get('title')}
           onChange={(e) => { update({ title: e.target.value }) }}
+          required
         />
       </div>
 
@@ -36,6 +37,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ event, update, sa
           id='date'
           value={event.get('date')}
           onChange={(e) => { update({ date: e.target.value }) }}
+          required
         />
       </div>
 
