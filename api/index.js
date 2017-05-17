@@ -14,7 +14,6 @@ module.exports = db => {
       .insertOne({
         title: body.title,
         date: 'hoge',
-        minimumCharge: 0,
         description: 'aaaa'
       })
   }))

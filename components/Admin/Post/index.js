@@ -42,16 +42,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ event, update, sa
       </div>
 
       <div>
-        <label htmlFor='minimumCharge'>Minimum Charge</label>
-        <input
-          type='text'
-          id='minimumCharge'
-          value={event.get('minimumCharge')}
-          onChange={(e) => { update({ minimumCharge: e.target.value }) }}
-        />
-      </div>
-
-      <div>
         <label htmlFor='description'>Description</label>
         <textarea
           id='description'
