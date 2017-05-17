@@ -21,22 +21,41 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ event, update, sa
     <form onSubmit={(e) => { e.preventDefault(); save({title: event.get('title')}) }}>
       <div>
         <label htmlFor='title'>Event Title</label>
-        <input type='text' id='title' value={event.get('title')} onChange={(e) => { update({ title: e.target.value }) }} />
+        <input
+          type='text'
+          id='title'
+          value={event.get('title')}
+          onChange={(e) => { update({ title: e.target.value }) }}
+        />
       </div>
 
       <div>
         <label htmlFor='date'>Date</label>
-        <input type='date' id='date' value={event.get('date')} onChange={(e) => { update({ date: e.target.value }) }} />
+        <input
+          type='date'
+          id='date'
+          value={event.get('date')}
+          onChange={(e) => { update({ date: e.target.value }) }}
+        />
       </div>
 
       <div>
         <label htmlFor='minimumCharge'>Minimum Charge</label>
-        <input type='text' id='minimumCharge' value={event.get('minimumCharge')} onChange={(e) => { update({ minimumCharge: e.target.value }) }} />
+        <input
+          type='text'
+          id='minimumCharge'
+          value={event.get('minimumCharge')}
+          onChange={(e) => { update({ minimumCharge: e.target.value }) }}
+        />
       </div>
 
       <div>
         <label htmlFor='description'>Description</label>
-        <textarea id='description' value={event.get('description')} onChange={(e) => { update({ description: e.target.value }) }} />
+        <textarea
+          id='description'
+          value={event.get('description')}
+          onChange={(e) => { update({ description: e.target.value }) }}
+        />
       </div>
 
       <button type='submit'>Save</button>
