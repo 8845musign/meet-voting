@@ -52,9 +52,6 @@ export const EventSaveMiddleawre = store => next => action => {
 const event = new EventModel()
 
 export const reducer = (state = {event}, action) => {
-  console.log(action)
-  console.log(state)
-
   switch (action.type) {
     case UPDATE:
       const newEvent = state.merge(action.data)
@@ -62,11 +59,9 @@ export const reducer = (state = {event}, action) => {
       return newEvent
 
     case SAVE_SUCCESS:
-      console.log('save success')
       return state
 
     case SAVE_ERROR:
-      console.log('save error')
       return state
 
     default:
