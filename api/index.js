@@ -13,8 +13,8 @@ module.exports = db => {
     await db.collection('Event')
       .insertOne({
         title: body.title,
-        date: 'hoge',
-        description: 'aaaa'
+        date: body.date,
+        description: body.description
       })
   }))
 

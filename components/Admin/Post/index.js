@@ -18,7 +18,11 @@ const mapDispatchToProps = (dispatch) => {
 
 const onSubmit = (event, save) => e => {
   e.preventDefault()
-  save({title: event.get('title')})
+  save({
+    title: event.get('title'),
+    date: event.get('date'),
+    description: event.get('description')
+  })
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(({ event, update, save }) => {

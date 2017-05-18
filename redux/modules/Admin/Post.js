@@ -32,7 +32,9 @@ export const EventSaveMiddleawre = store => next => action => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      title: action.data.title
+      title: action.data.title,
+      date: action.data.date,
+      description: action.data.description
     })
   })
   .then((res) => {
