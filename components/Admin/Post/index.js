@@ -16,9 +16,14 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+const onSubmit = (event, save) => e => {
+  e.preventDefault()
+  save({title: event.get('title')})
+}
+
 export default connect(mapStateToProps, mapDispatchToProps)(({ event, update, save }) => {
   return (
-    <form onSubmit={(e) => { e.preventDefault(); save({title: event.get('title')}) }}>
+    <form onSubmit={onSubmit(event, save)}>
       <div>
         <label htmlFor='title'>Event Title</label>
         <input
