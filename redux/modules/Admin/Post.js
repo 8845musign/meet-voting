@@ -22,7 +22,6 @@ export const save = data => {
 
 // middleware
 export const EventSaveMiddleawre = store => next => action => {
-  console.log(action.type)
   if (action.type !== SAVE) {
     next(action)
     return
