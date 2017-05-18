@@ -22,7 +22,11 @@ export const save = data => {
 
 // middleware
 export const EventSaveMiddleawre = store => next => action => {
-  if (action.type !== SAVE) next(action)
+  console.log(action.type)
+  if (action.type !== SAVE) {
+    next(action)
+    return
+  }
 
   const { dispatch } = store
 
