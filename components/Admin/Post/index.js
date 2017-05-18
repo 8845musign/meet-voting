@@ -27,39 +27,45 @@ const onSubmit = (event, save) => e => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(({ event, update, save }) => {
   return (
-    <form onSubmit={onSubmit(event, save)}>
-      <div>
-        <label htmlFor='title'>Event Title</label>
-        <input
-          type='text'
-          id='title'
-          value={event.get('title')}
-          onChange={(e) => { update({ title: e.target.value }) }}
-          required
-        />
-      </div>
+    <div className='container'>
+      <form onSubmit={onSubmit(event, save)}>
+        <div className='form-group'>
+          <label htmlFor='title'>Event Title</label>
+          <input
+            className='form-control'
+            type='text'
+            id='title'
+            value={event.get('title')}
+            onChange={(e) => { update({ title: e.target.value }) }}
+            required
+          />
+        </div>
 
-      <div>
-        <label htmlFor='date'>Date</label>
-        <input
-          type='date'
-          id='date'
-          value={event.get('date')}
-          onChange={(e) => { update({ date: e.target.value }) }}
-          required
-        />
-      </div>
+        <div className='form-group'>
+          <label htmlFor='date'>Date</label>
+          <input
+            className='form-control'
+            type='date'
+            id='date'
+            value={event.get('date')}
+            onChange={(e) => { update({ date: e.target.value }) }}
+            required
+          />
+        </div>
 
-      <div>
-        <label htmlFor='description'>Description</label>
-        <textarea
-          id='description'
-          value={event.get('description')}
-          onChange={(e) => { update({ description: e.target.value }) }}
-        />
-      </div>
+        <div className='form-group'>
+          <label htmlFor='description'>Description</label>
+          <textarea
+            className='form-control'
+            id='description'
+            value={event.get('description')}
+            onChange={(e) => { update({ description: e.target.value }) }}
+          />
+        </div>
 
-      <button type='submit'>Save</button>
-    </form>
+        <button className='btn btn-primary' type='submit'>Save</button>
+      </form>
+    </div>
+
   )
 })
