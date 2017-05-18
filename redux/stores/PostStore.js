@@ -15,5 +15,9 @@ const rootReducer = combineReducers({
 })
 
 export const initStore = () => {
-  return createStore(rootReducer, initialState, applyMiddleware(EventSaveMiddleawre))
+  return createStore(
+    rootReducer,
+    initialState,
+    applyMiddleware(EventSaveMiddleawre)
+  )
 }
